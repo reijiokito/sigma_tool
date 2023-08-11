@@ -62,7 +62,8 @@ func checkCommand(other string, others []string, index int, args []string) {
 
 	case "help":
 		rawLog(helpMsg)
-
+	case "dest":
+		setDest(others[index+1])
 	default:
 		errorLogRaw("Command %s not found", bolden(other))
 		os.Exit(1)
