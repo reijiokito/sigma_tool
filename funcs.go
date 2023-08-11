@@ -24,8 +24,8 @@ func setDest(dest string) {
 	chapLog("=>", "", fmt.Sprintf("Destionation folder: %s", DestFolder))
 }
 
-func initPlugin() {
-	chapLog("=>", "", "Initializing")
+func initPlugin(pkgName string) {
+	chapLog("=>", "", fmt.Sprintf("Initializing %s", pkgName))
 	//Step1: Get Plugin Registry (Server expose an API to get plugin registry)
 	//Step2: Get plugin URLs
 	//_ := isValidURL(pkgName)

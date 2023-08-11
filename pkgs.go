@@ -9,7 +9,7 @@ func installPkgs(pkgNames []string) {
 		chapLog("=>", "", "Installing %s", pkgName)
 		chapLog("==>", "", "Preparing for installation of %s", pkgName)
 
-		initPlugin()
+		initPlugin(pkgName)
 
 		chapLog("==>", textCol.Green, "Successfully installed %s", pkgName)
 	}
