@@ -45,14 +45,14 @@ func checkCommand(other string, others []string, index int, args []string) {
 
 	switch other {
 	case "install":
-		checkForOptions("package names", 1)
+		checkForOptions("plugin names", 1)
 
 		optionToOthers = true
 
 		installPkgs(others[index+1:])
 
 	case "uninstall":
-		checkForOptions("package names", 1)
+		checkForOptions("plugin names", 1)
 
 		optionToOthers = true
 
@@ -60,6 +60,7 @@ func checkCommand(other string, others []string, index int, args []string) {
 
 	case "upgrade":
 
+	case "usname":
 	case "help":
 		rawLog(helpMsg)
 	case "dest":

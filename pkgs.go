@@ -1,7 +1,5 @@
 package main
 
-var DestFolder string
-
 func installPkgs(pkgNames []string) {
 	displayPkgs(pkgNames, "install")
 
@@ -15,7 +13,7 @@ func installPkgs(pkgNames []string) {
 	}
 
 	chapLog("=>", textCol.Green, "Success")
-	log(0, "Installed all selected packages successfully.")
+	log(0, "Installed all selected plugins successfully.")
 }
 
 func uninstallPkgs(pkgNames []string) {
