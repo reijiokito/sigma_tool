@@ -8,12 +8,9 @@ import (
 const version = "0.0.1"
 
 var (
-	purge      bool = false
-	debug      bool = false
-	assumeYes  bool = false
-	force      bool = false
-	noDeps     bool = false
-	ignoreRoot bool = false
+	debug     bool = false
+	assumeYes bool = false
+	force     bool = false
 )
 
 var optionToOthers, optionToOther bool = false, false
@@ -60,7 +57,6 @@ func checkCommand(other string, others []string, index int, args []string) {
 
 	case "upgrade":
 
-	case "usname":
 	case "help":
 		rawLog(helpMsg)
 	case "dest":
