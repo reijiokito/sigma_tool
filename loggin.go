@@ -51,7 +51,7 @@ func rawLogf(msg string, params ...interface{}) {
 }
 
 func rawLog(msg string) {
-	fmt.Print(msg) // nolint:forbidigo
+	fmt.Println(msg) // nolint:forbidigo
 }
 
 func log(logTypeInput int, msg string, params ...interface{}) {
