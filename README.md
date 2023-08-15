@@ -24,7 +24,7 @@ It pulls plugin(zip file) from **Sigma Plugin Registry**, then delivers and sets
     - VD: `sigma uninstall pluginA@v0.0.1 pluginB@v0.0.2`
 5. **Upgrade**
     - _Description_: use to upgrade sigma tool
-    - _Command_ `sigma upgrade`
+    - _Command_ `sigma upgrade` 
 6. **Publish**
     - _Description_: use to publish plugin from client
     - _Command_ `sigma publish plg_name link_plg version`
