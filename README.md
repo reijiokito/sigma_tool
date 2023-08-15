@@ -15,17 +15,17 @@ It pulls plugin(zip file) from **Sigma Plugin Registry**, then delivers and sets
     - _Command_ `sigma dest path_folder`
     - VD: `sigma dest /home/sigma/plugins`
 3. **Install Plugin**
-    - _Description_: install plugins
-    - _Command_ `sigma install plg_name ...`
-    - VD: `sigma install pluginA pluginB`
+    - _Description_: set up plugins in local machine
+    - _Command_ `sigma install plg_name@ver0.0.1 ...`
+    - VD: `sigma install pluginA@v0.0.1 pluginB@v0.0.2`
 4. **Uninstall Plugin**
-    - _Description_: uninstall plugins
+    - _Description_: remove plugins in local machine
     - _Command_ `sigma uninstall plg_name ...`
-    - VD: `sigma uninstall pluginA pluginB`
+    - VD: `sigma uninstall pluginA@v0.0.1 pluginB@v0.0.2`
 5. **Upgrade**
     - _Description_: use to upgrade sigma tool
     - _Command_ `sigma upgrade`
 6. **Publish**
     - _Description_: use to publish plugin from client
     - _Command_ `sigma publish plg_name link_plg version`
-    - VD: `sigma publish pluginA https://www.3gpp.org/archive/29512-010.zip 0.0.1`
+    - VD: `sigma publish pluginA https://www.3gpp.org/archive/29512-010.zip v0.0.1`

@@ -22,10 +22,10 @@ func displayPlugins(pkgNames []string, action string) {
 }
 
 func publishPlg(plgName string, pluginDir string, version string) {
-	//Step1: Get Plugin Registry (Server expose an API to get plugin registry)
-	//_ := isValidURL(pkgName)
-	//Step2: Check duplicate
-	//Step3: Push to Plugin Registry (using API create)
+	//TODO: Step1: Get Plugin Registry (Server expose an API to get plugin registry)
+	//TODO: _ := isValidURL(pkgName)
+	//TODO: Step2: Check duplicate/Check version
+	//TODO: Step3: Push to Plugin Registry (using API create)
 }
 
 func removePlg(plgName string) {
@@ -49,12 +49,16 @@ func removePlg(plgName string) {
 	}
 }
 
+// pluginA@v0.0.1
 func initPlg(plgName string) {
 	chapLog("=>", "", fmt.Sprintf("Initializing %s", plgName))
-	//Step1: Get Plugin Registry (Server expose an API to get plugin registry)
-	//Step2: Get plugin URLs
-	//_ := isValidURL(pkgName)
-	//Step3: Download plugin -> Setup to local machine
+
+	//parts := strings.Split(plgName, "@")
+
+	//TODO: Step1: Get Plugin Registry (Server expose an API to get plugin registry)
+	//TODO: Step2: Get plugin URLs
+	//TODO: _ := isValidURL(pkgName)
+	//TODO: Step3: Download plugin -> Setup to local machine
 
 	url := "https://www.3gpp.org/ftp/Specs/archive/29_series/29.512/29512-010.zip"
 	downloadZipFile(url)
