@@ -46,21 +46,32 @@ func checkCommand(other string, others []string, index int, args []string) {
 
 		optionToOthers = true
 
-		installPkgs(others[index+1:])
+		installPlugins(others[index+1:])
 
 	case "uninstall":
 		checkForOptions("plugin names", 1)
 
 		optionToOthers = true
 
-		uninstallPkgs(others[index+1:])
+		uninstallPlugins(others[index+1:])
+
+	case "publish":
+		checkForOptions("plugin names", 3)
+
+		optionToOthers = true
+
+		publishPlugin(others[index+1], others[index+2], others[index+3])
 
 	case "upgrade":
+		rawLog(`This feature is developing`)
+		//TODO:
 
 	case "help":
 		rawLog(helpMsg)
+
 	case "dest":
 		setDest(others[index+1])
+
 	default:
 		errorLogRaw("Command %s not found", bolden(other))
 		os.Exit(1)
@@ -96,6 +107,6 @@ func parseInput() {
 	}
 
 	if len(others) < 1 {
-		log(1, "Indiepkg Version %s, run %s for usage.", bolden(version), bolden("indiepkg help"))
+		log(1, "Sigma Tool Version %s, run %s for usage.", bolden(version), bolden("sigma tool help"))
 	}
 }

@@ -1,21 +1,40 @@
 package main
 
-func installPkgs(pkgNames []string) {
-	displayPkgs(pkgNames, "install")
+func installPlugins(plgNames []string) {
+	displayPlugins(plgNames, "install")
 
-	for _, pkgName := range pkgNames {
-		chapLog("=>", "", "Installing %s", pkgName)
-		chapLog("==>", "", "Preparing for installation of %s", pkgName)
+	for _, plgName := range plgNames {
+		chapLog("=>", "", "Installing %s", plgName)
+		chapLog("==>", "", "Preparing for installation of %s", plgName)
 
-		initPlugin(pkgName)
+		initPlg(plgName)
 
-		chapLog("==>", textCol.Green, "Successfully installed %s", pkgName)
+		chapLog("==>", textCol.Green, "Successfully installed %s", plgName)
 	}
 
 	chapLog("=>", textCol.Green, "Success")
 	log(0, "Installed all selected plugins successfully.")
 }
 
-func uninstallPkgs(pkgNames []string) {
+func uninstallPlugins(plgNames []string) {
+	displayPlugins(plgNames, "uninstall")
 
+	for _, plgName := range plgNames {
+		chapLog("=>", "", "Uninstalling %s", plgName)
+		removePlg(plgName)
+
+		chapLog("==>", textCol.Green, "Successfully uninstalled %s", plgName)
+	}
+
+	chapLog("=>", textCol.Green, "Success")
+	log(0, "Uninstalled all selected plugins successfully.")
+}
+
+func publishPlugin(plgName string, pluginDir string, version string) {
+	chapLog("=>", "", "Publishing plugin %s", plgName)
+
+	publishPlg(plgName, pluginDir, version)
+
+	chapLog("=>", textCol.Green, "Success")
+	log(0, "Uninstalled all selected plugins successfully.")
 }

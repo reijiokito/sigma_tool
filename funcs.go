@@ -8,9 +8,10 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"path/filepath"
 )
 
-func displayPkgs(pkgNames []string, action string) {
+func displayPlugins(pkgNames []string, action string) {
 	log(1, "Are you sure you would like to %s the following plugins:", bolden(action))
 
 	for _, pkgToDisplay := range pkgNames {
@@ -20,9 +21,36 @@ func displayPkgs(pkgNames []string, action string) {
 	confirm("y", "(y/n)")
 }
 
-func initPlugin(pkgName string) {
-	chapLog("=>", "", fmt.Sprintf("Initializing %s", pkgName))
-	//Step0: Login
+func publishPlg(plgName string, pluginDir string, version string) {
+	//Step1: Get Plugin Registry (Server expose an API to get plugin registry)
+	//_ := isValidURL(pkgName)
+	//Step2: Check duplicate
+	//Step3: Push to Plugin Registry (using API create)
+}
+
+func removePlg(plgName string) {
+	destination, err := readPluginDestination()
+	if err != nil {
+		errorLogRaw("Destination is not valid")
+		return
+	}
+	childFolderPath := filepath.Join(destination, plgName)
+
+	_, err = os.Stat(childFolderPath)
+	if err != nil {
+		errorLogRaw("Child folder is not existed: %v", err)
+		return
+	}
+
+	err = os.RemoveAll(childFolderPath)
+	if err != nil {
+		errorLogRaw("Remove plugin error: %v", err)
+		return
+	}
+}
+
+func initPlg(plgName string) {
+	chapLog("=>", "", fmt.Sprintf("Initializing %s", plgName))
 	//Step1: Get Plugin Registry (Server expose an API to get plugin registry)
 	//Step2: Get plugin URLs
 	//_ := isValidURL(pkgName)
